@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL Formatter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-okaidia.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-sql.min.js"></script>
+  </head>
+
+  <body>
+    <button id="theme-toggle" aria-label="Toggle Theme">
+      <i class="fas fa-lightbulb"></i>
+    </button>
+    <h1>SQL Formatter</h1>
+    <div id="input-container">
+      <label for="input-sql">Paste your SQL here:</label>
+      <br /><br />
+      <textarea id="input-sql" rows="10" cols="25"></textarea>
+    </div>
+    <br />
+    <h2>Result</h2>
+    <br />
+
+    <div id="formatted-output-container">
+      <button
+        id="copy-button"
+        aria-label="Copy SQL"
+        data-tooltip="Copy formatted query"
+      >
+        <i class="fa-solid fa-copy"></i>
+      </button>
+      <pre
+        id="formatted-output"
+      ><code class="language-sql" id="formatted-code"></code></pre>
+    </div>
+
+    <footer>
+      <span
+        >Fork me on
+        <a href="https://github.com/HarrisonRClark/array-vizualiser"
+          ><b>GitHub</b></a
+        ></span
+      ><br />
+      <span>
+        <a href="/"><b>Array Viewer</b></a></span
+      >
+    </footer>
+    <script src="https://unpkg.com/sql-formatter@12.2.0/dist/sql-formatter.min.js"></script>
+    <script src="sql_format_script.js"></script>
+  </body>
+</html>
