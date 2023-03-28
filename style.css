@@ -120,3 +120,7 @@ a:visited {
     text-decoration: none;
     color: var(--secondary-text-color);
 }
+
+h2 {
+    color: var(--secondary-text-color)
+}
