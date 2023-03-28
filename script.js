@@ -14,6 +14,7 @@ inputArrayElement.addEventListener("input", () => {
       cards.style.display = "flex";
       cards.style.flexWrap = "wrap";
       cards.style.alignItems = "stretch";
+      cards.style.gap = "20px";
 
       for (let i = 0; i < array.length; i++) {
         const card = document.createElement("div");
@@ -48,3 +49,28 @@ inputArrayElement.addEventListener("input", () => {
       "Error: Unable to parse the input. Make sure it is a valid array.";
   }
 });
+
+function initThemeToggle() {
+  const themeToggleButton = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.classList.remove("dark-theme", "light-theme");
+    body.classList.add(savedTheme);
+  } else {
+    body.classList.add("dark-theme");
+  }
+
+  themeToggleButton.addEventListener("click", function () {
+    if (body.classList.contains("dark-theme")) {
+      body.classList.replace("dark-theme", "light-theme");
+      localStorage.setItem("theme", "light-theme");
+    } else {
+      body.classList.replace("light-theme", "dark-theme");
+      localStorage.setItem("theme", "dark-theme");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initThemeToggle);
