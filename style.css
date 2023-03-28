@@ -131,7 +131,7 @@ h2 {
 }
 
 #formatted-output {
-    background-color: var(--input-background-color);
+    background-color: #2F3037;
     color: var(--secondary-text-color);
     width: 100%;
     min-height: 200px;
